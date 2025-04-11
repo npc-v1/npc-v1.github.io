@@ -1,0 +1,35 @@
+/ (root)
+├── index.html               # Main page in Mongolian
+├── index-en.html           # English version of the main page
+├── README.txt              # Project documentation
+├── assets/
+│   ├── css/
+│   │   ├── main.css           # Compiled CSS
+│   │   └── fontawesome-all.min.css  # Font Awesome icons
+│   ├── sass/
+│   │   ├── main.scss          # Main SASS file
+│   │   └── libs/
+│   │       ├── _vars.scss
+│   │       ├── _functions.scss
+│   │       ├── _mixins.scss
+│   │       ├── _vendor.scss
+│   │       ├── _breakpoints.scss
+│   │       └── _html-grid.scss
+│   ├── js/
+│   │   ├── main.js            # Main JavaScript file
+│   │   ├── jquery.min.js
+│   │   ├── jquery.scrolly.min.js
+│   │   ├── jquery.scrollex.min.js
+│   │   ├── browser.min.js
+│   │   ├── breakpoints.min.js
+│   │   └── util.js
+│   └── images/
+│       ├── avatar.jpg         # 96x96 profile picture
+│       ├── banner.jpg         # 1920x1080 banner image
+│       ├── overlay.png        # 128x128 transparent pattern
+│       └── portfolio/
+│           ├── dota2-naga.jpg    # 1200x800
+│           ├── qa-testing.jpg    # 1200x800
+│           ├── mathematics.jpg   # 1200x800
+│           ├── basketball.jpg    # 1200x800
+│           └── singing.jpg       # 1200x800

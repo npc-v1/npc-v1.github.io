@@ -120,4 +120,30 @@
 					visibleClass: 'header-visible'
 				});
 
+	// Image loading handler
+	document.addEventListener('DOMContentLoaded', function() {
+		const portfolioImages = document.querySelectorAll('.image.fit img');
+		
+		portfolioImages.forEach(img => {
+			img.parentElement.classList.add('loading');
+			
+			img.addEventListener('load', function() {
+				this.parentElement.classList.remove('loading');
+				this.parentElement.classList.add('loaded');
+				this.classList.add('loaded');
+			});
+			
+			img.addEventListener('error', function() {
+				console.error('Error loading image:', this.src);
+				this.parentElement.classList.add('error');
+			});
+			
+			if (img.complete) {
+				img.parentElement.classList.remove('loading');
+				img.parentElement.classList.add('loaded');
+				img.classList.add('loaded');
+			}
+		});
+	});
+
 })(jQuery);

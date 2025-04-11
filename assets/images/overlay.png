@@ -1,0 +1,6 @@
+Create a 128x128 PNG with:
+- Background: transparent
+- Pattern: diagonal lines at 45 degrees
+- Line color: rgba(0,0,0,0.15)
+- Line spacing: 4px
+- Line thickness: 1px

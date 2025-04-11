@@ -1791,6 +1791,50 @@ input, select, textarea {
 				width: auto;
 			}
 
+/* Image loading states */
+.image.fit {
+    position: relative;
+    background: #f5f5f5;
+    min-height: 200px;
+}
+
+.image.fit.loading::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    margin: -15px 0 0 -15px;
+    border: 3px solid #f1f1f1;
+    border-top-color: #8ebebc;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.image.fit.error::before {
+    content: '!';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2em;
+    color: #ff6b6b;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.image.fit img {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.image.fit img.loaded {
+    opacity: 1;
+}
+
 /* List */
 
 	ul {
@@ -2486,6 +2530,99 @@ input, select, textarea {
 					text-decoration: none;
 					position: absolute;
 					left: 0;
+/* Portfolio Section Styles */
+#portfolio {
+    background: #f7f7f7;
+    padding: 5em 0;
+}
+
+#portfolio .item {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2em;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+#portfolio .item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+#portfolio .item .image.fit {
+    position: relative;
+    overflow: hidden;
+    padding-top: 66.67%; /* Maintains 3:2 aspect ratio */
+}
+
+#portfolio .item .image.fit img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Image loading animation */
+#portfolio .item .image.fit img {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#portfolio .item .image.fit img.loaded {
+    opacity: 1;
+}
+
+/* Image hover effect */
+#portfolio .item:hover .image.fit img {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+#portfolio .item header {
+    padding: 1.5em;
+}
+
+#portfolio .item header h3 {
+    font-size: 1.2em;
+    margin: 0 0 0.5em 0;
+    color: #484848;
+}
+
+#portfolio .item header p {
+    font-size: 0.9em;
+    color: #666;
+    margin: 0;
+    line-height: 1.4;
+}
+
+#portfolio .container > header {
+    margin-bottom: 3em;
+    text-align: center;
+}
+
+#portfolio .container > header p {
+    max-width: 700px;
+    margin: 1em auto;
+    color: #666;
+}
+
+@media screen and (max-width: 736px) {
+    #portfolio {
+        padding: 3em 0;
+    }
+    
+    #portfolio .item {
+        margin-bottom: 1.5em;
+    }
+    
+    #portfolio .item header {
+        padding: 1em;
+    }
+}
 					top: 0;
 					width: 100%;
 					height: 100%;
